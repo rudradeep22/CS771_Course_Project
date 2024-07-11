@@ -31,9 +31,10 @@ def my_fit( X_train, y0_train, y1_train ):
 	
 	# THE RETURNED MODELS SHOULD BE TWO VECTORS AND TWO BIAS TERMS
 	# If you do not wish to use a bias term, set it to 0
-	# model = LinearSVC(C=100000, tol=1e-5, penalty='l2', max_iter=1000, loss='squared_hinge', dual=False)
+	model = LinearSVC(C=1000, tol=1e-5, penalty='l2', max_iter=1000, loss='squared_hinge', dual=False)
+	# model2 = LinearSVC(C=100, tol=1e-5, penalty='l1', max_iter=1000, loss='squared_hinge', dual=False)
 	# model = LinearSVC(C=100, tol=1e-5, penalty='l2', max_iter=2000, loss='hinge', dual=True)
-	model = LogisticRegression(C=100000, tol=1e-5, penalty='l2', max_iter=1000, solver='liblinear')
+	# model = LogisticRegression(C=100, tol=1e-5, penalty='l1', max_iter=1000, solver='liblinear')
 	feat = my_map(X_train)
 	model.fit(feat, y0_train)
 	w0 = model.coef_
